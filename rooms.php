@@ -1,7 +1,4 @@
-<?php
-// Start the session
-session_start();
-?>
+
 <?php include('db.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -245,37 +242,21 @@ session_start();
       background: #555;
     }
 
-    /* Footer
+    /* Footer */
     .footer {
       text-align: center;
       padding: 20px;
       background: #222;
       color: #bbb;
       margin-top: 50px;
-    } */
+    }
 
     /* Add blur effect */
-    /* .blur-background {
+    .blur-background {
       filter: blur(5px);
       pointer-events: none;
       /* Disable interactions with the blurred content */
-    
-
-      #last{
-     /* margin-top:-10px;  */
-     font-size:25px;
-     color: white;
-     background-color: #2c2c54;
-     padding-top: 20px;
-     padding-bottom: 20px;
-     height:150%;
-    padding-left:40%;
-     padding-right:40%;
-     text-align: center;
-     font-weight: 400;
-     margin: 0;
     }
-  </style>
   </style>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
@@ -288,7 +269,7 @@ session_start();
 </head>
 
 <body>
-  <?php include("customernavbar.php"); ?>
+  <?php include("staffnavbar.php"); ?>
   <!-- Header Section -->
   <header class="header">
     <div class="overlay"></div>
@@ -463,7 +444,7 @@ session_start();
             </div>
 
             <!-- Submit Button -->
-            <button type="button" class="btn btn-success w-100" name="Confirm" data-bs-toggle="modal" data-bs-target="#paymentModal">Confirm Booking</button>
+            <button type="submit" class="btn btn-success w-100" name="Confirm" data-bs-toggle="modal" data-bs-target="#paymentModal">Confirm Booking</button>
 			
 			
 			
@@ -471,8 +452,7 @@ session_start();
         </div>
       </div>
     </div>
-
-
+  </form>
 
     <!-- Payment Modal -->
 
@@ -499,14 +479,15 @@ session_start();
                 <label class="form-check-label" for="netBanking">Net Banking</label>
               </div>
             </div>
-            <button type="submit" name="confirm" class="btn btn-success w-100">Confirm Payment</button>
+            <button type="button" name="confirm" class="btn btn-success w-100">Confirm Payment</button>
           </div>
 
         </div>
       </div>
     </div>
+  <!-- </form> -->
+ 
 
-  </form>
 
 
 
@@ -553,9 +534,9 @@ session_start();
   <?php include('footer.php'); ?>
 
   <!-- Footer -->
-  <!-- <footer class="footer">
+  <footer class="footer">
     <p>© 2025 Hotel Name. All Rights Reserved.</p>
-  </footer> -->
+  </footer>
 
 
 

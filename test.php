@@ -1,157 +1,124 @@
-<!-- filepath: c:\xampp\htdocs\hotelprj\cfolder\test.php -->
+<!-- filepath: c:\xampp\htdocs\hotelprj\stafffolder\staff_dashboard.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Room Booking</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Staff Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="staff.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .card {
+            transition: transform 0.3s ease;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .navbar-brand {
+            font-weight: bold;
+        }
+        .nav-link {
+            font-size: 1.1rem;
+        }
+        .text-danger {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="#">Hotel Name</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Rooms</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                </ul>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm mb-5">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Hotel Staff Panel</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item mx-4">
+                    <a class="nav-link" href="#tasks">My Tasks</a>
+                </li>
+                <li class="nav-item mx-4">
+                    <a class="nav-link" href="#room-service">Room Service</a>
+                </li>
+                <li class="nav-item mx-4">
+                    <a class="nav-link" href="#attendance">Attendance</a>
+                </li>
+                <li class="nav-item mx-4">
+                    <a class="nav-link" href="#profile">My Profile</a>
+                </li>
+                <li class="nav-item mx-4">
+                    <a class="nav-link text-danger" href="logout.php">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <!-- Tasks Section -->
+        <div class="col-md-6 mb-4" id="tasks">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">My Tasks</h5>
+                    <p class="card-text">View and manage your assigned tasks efficiently.</p>
+                    <a href="staff_tasks.php" class="btn btn-primary">Go to Tasks</a>
+                </div>
             </div>
         </div>
-    </nav>
 
-    <!-- Room Booking Section -->
-    <div class="container my-5">
-        <h2 class="text-center mb-4">Room Booking</h2>
-        <form id="bookingForm">
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="roomType" class="form-label">Room Type</label>
-                    <select id="roomType" name="RoomType" class="form-select" required>
-                        <option value="" selected>Select Room Type</option>
-                        <option value="Deluxe Room">Deluxe Room</option>
-                        <option value="Family Room">Family Room</option>
-                        <option value="Single Room">Single Room</option>
-                    </select>
-                </div>
-                <div class="col-md-6">
-                    <label for="numPersons" class="form-label">Number of Persons</label>
-                    <input type="number" class="form-control" id="numPersons" name="NumPersons" min="1" required>
+        <!-- Room Service Section -->
+        <div class="col-md-6 mb-4" id="room-service">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Room Service</h5>
+                    <p class="card-text">Handle room service requests and updates.</p>
+                    <a href="staff_room_service.php" class="btn btn-primary">Manage Room Service</a>
                 </div>
             </div>
-            <div class="row mb-3">
-                <div class="col-md-6">
-                    <label for="checkIn" class="form-label">Check-In Date</label>
-                    <input type="date" class="form-control" id="checkIn" name="CheckIn" required>
-                </div>
-                <div class="col-md-6">
-                    <label for="checkOut" class="form-label">Check-Out Date</label>
-                    <input type="date" class="form-control" id="checkOut" name="CheckOut" required>
+        </div>
+
+        <!-- Attendance Section -->
+        <div class="col-md-6 mb-4" id="attendance">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Attendance</h5>
+                    <p class="card-text">Track your attendance and working hours.</p>
+                    <a href="staff_attendance.php" class="btn btn-primary">View Attendance</a>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary w-100">Proceed to Payment</button>
-        </form>
-    </div>
+        </div>
 
-
-
-    <!-- Payment Modal -->
-    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="paymentModalLabel">Payment Options</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="paymentForm">
-                        <h4>Select Payment Method</h4>
-                        <div class="mb-3">
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="paymentMethod" id="creditCard" value="Credit/Debit Card" required>
-                                <label class="form-check-label" for="creditCard">Credit/Debit Card</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="paymentMethod" id="upi" value="UPI">
-                                <label class="form-check-label" for="upi">UPI</label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="paymentMethod" id="netBanking" value="Net Banking">
-                                <label class="form-check-label" for="netBanking">Net Banking</label>
-                            </div>
-                        </div>
-                        <button type="submit" class="btn btn-success w-100">Confirm Payment</button>
-                    </form>
+        <!-- Profile Section -->
+        <div class="col-md-6 mb-4" id="profile">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">My Profile</h5>
+                    <p class="card-text">Update your personal information and settings.</p>
+                    <a href="staff_profile.php" class="btn btn-primary">Edit Profile</a>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- Success Modal -->
-    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="successModalLabel">Booking Confirmed</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body text-center">
-                    <h4>Your booking has been confirmed!</h4>
-                    <p>Thank you for choosing our hotel.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+<!-- Footer -->
+<footer class="text-center mt-5">
+    <p>&copy; 2025 Hotel Management System. All Rights Reserved.</p>
+</footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script>
-        // Handle booking form submission
-        const bookingForm = document.getElementById('bookingForm');
-        bookingForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-            const roomType = document.getElementById('roomType').value;
-            const numPersons = document.getElementById('numPersons').value;
-
-            // Validate number of persons
-            if (roomType === 'Family Room' && numPersons > 10) {
-                alert('Family Room allows a maximum of 10 persons.');
-                return;
-            } else if (roomType !== 'Family Room' && numPersons > 4) {
-                alert('This room allows a maximum of 4 persons.');
-                return;
-            }
-
-            // Show payment modal
-            const paymentModal = new bootstrap.Modal(document.getElementById('paymentModal'));
-            paymentModal.show();
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+<script>
+    // Example JavaScript for interactivity
+    document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('click', () => {
+            alert('Navigating to ' + card.querySelector('.card-title').textContent);
         });
-
-        // Handle payment form submission
-        const paymentForm = document.getElementById('paymentForm');
-        paymentForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            // Show success modal
-            const paymentModal = bootstrap.Modal.getInstance(document.getElementById('paymentModal'));
-            paymentModal.hide();
-
-            const successModal = new bootstrap.Modal(document.getElementById('successModal'));
-            successModal.show();
-        });
-    </script>
+    });
+</script>
 </body>
 </html>

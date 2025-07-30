@@ -1,0 +1,32 @@
+ /* Custom CSS for better spacing and font size */
+ .navbar-nav .nav-link {
+    font-size: 1.3rem; /* Increase font size */
+    padding: 0.5rem 0.9rem;/* Consistent padding */
+    margin-right: 1rem; /* Add spacing between items */
+    color: #333; /* Default text color */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+.navbar-nav .nav-link:hover {
+    background-color: #f9ae23; /* Adjusted hover background color */
+    color: #fff; /* White text on hover */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add subtle shadow on hover */
+     /*line-height: 1.2; Slightly smaller line height on hover */
+}
+
+.navbar-brand {
+    font-size: 1.2rem; /* Larger font size for the brand */
+    font-weight: bold; /* Make it bold */
+   margin-right: 2rem; /* Add spacing after the brand */
+}
+.dropdown-menu {
+    font-size: 1.2rem; /* Adjust dropdown font size */
+}
+.navbar {
+    padding: 1rem 1.5rem; /* Add padding to the navbar */
+}
+.navbar-nav .nav-link {
+   
+    color: #333; /* Changes text color */
+}

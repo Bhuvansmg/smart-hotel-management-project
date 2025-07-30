@@ -1,4 +1,6 @@
-<?php include("customernavbar.php"); ?>
+
+<?php include("staffnavbar.php"); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -110,21 +112,6 @@
 .services container{
     margin-top:-150px;
 }
-  #last{
-     /* margin-top:-10px;  */
-     font-size:25px;
-     color: white;
-     background-color: #2c2c54;
-     padding-top: 20px;
-     padding-bottom: 20px;
-     height:150%;
-    padding-left:40%;
-     padding-right:40%;
-     text-align: center;
-     font-weight: 400;
-     margin: 0;
-    }
-  </style>
     </style>
 </head>
 
@@ -163,7 +150,7 @@
             <!-- Service 1 -->
             <div class="col-md-4 mb-4 fade-in">
                 <div class="card service-card">
-                <img src="cimages/r.jpg" class="card-img-top" alt="Room Service">
+                <img src="hotelprj/cfolder/cimages/r.jpg" class="card-img-top" alt="Room Service">
                  <div class="card-body">
                     
                         <h5 class="card-title">Room Service</h5>
