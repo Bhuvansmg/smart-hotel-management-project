@@ -1,0 +1,59 @@
+
+/* Add a clean and professional font */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Navbar styling */
+.navbar-nav .nav-link {
+    font-size: 1.2rem; /* Slightly larger font size */
+    font-weight: 500; /* Medium weight for a professional look */
+    color: #333; /* Darker color for better readability */
+    margin-right:35px; /* Add spacing between items */
+    padding-left:5px;
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.navbar-nav .nav-link:hover {
+  background-color:rgb(249, 174, 35); /* Changes background color on hover */
+color: white; 
+border-radius: 5px; 
+
+/* Change color on hover */
+}
+
+.navbar-nav .dropdown-menu {
+    font-size: 1rem; /* Consistent font size for dropdown items */
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.3rem;
+    color: #000;
+}
+
+.navbar-brand:hover {
+    color: #007bff;
+}
+/* veg nonveg button */
+.custom-btn{
+    background-color:bisque;
+    color: rgb(106, 90, 90);
+    border:none;
+    border-radius: 5px;
+}
+
+
+
+
+/*customer navbar before login style */
+
+ #navbarNav{
+    justify-content:space-evenly;
+ }
+
+
+
+
+ 
+/*customer navbar after login style */

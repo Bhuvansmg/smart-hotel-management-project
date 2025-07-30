@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="customer.css">
+</head>
+<body>
+    <h1 id="ex">Explore Services</h1>
+</body>
+</html>
+
+
+
+<script>
+    // Populate modal with room details
+    const bookingModal = document.getElementById('bookingModal');
+    bookingModal.addEventListener('show.bs.modal', function(event) {
+      const button = event.relatedTarget;
+      const roomType = button.getAttribute('data-room');
+      const price = button.getAttribute('data-price');
+
+      document.getElementById('roomType').value = roomType;
+      document.getElementById('price').value = `₹${price}`;
+
+    //   // Set max persons based on room type
+    const numPersonsField = document.getElementById('numPersons');
+const numPersons = parseInt(numPersonsField.value, 10); // Get the value and parse it as an integer
+
+if (roomType === 'Family Room' && numPersons > 10) {
+    alert('Family Room allows a maximum of 10 persons.');
+    return;
+} else if (roomType !== 'Family Room' && numPersons > 4) {
+    alert('This room allows a maximum of 4 persons.');
+    return;
+}
+    });
+    // // Handle form submission
+    const bookingForm = document.getElementById('bookingForm');
+    bookingForm.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // Validate number of persons
+      const numPersonsField = document.getElementById('numPersons');
+      const maxPersons = numPersonsField.max;
+      if (parseInt(numPersonsField.value) > parseInt(maxPersons)) {
+        alert(`The maximum number of persons allowed for this room is ${maxPersons}.`);
+        return;
+      }
+
+      const paymentModal = new bootstrap.Modal(document.getElementById('paymentModal'));
+      paymentModal.show();
+      // alert('Booking Confirmed! Thank you for choosing us.');
+      // bookingModal.querySelector('.btn-close').click();
+    });
+
+
+ // Handle payment form submission
+ const paymentForm = document.getElementById('paymentForm');
+        paymentForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Show success modal
+            const paymentModal = bootstrap.Modal.getInstance(document.getElementById('paymentModal'));
+            paymentModal.hide();
+
+            const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+            successModal.show();
+        });
+ 
+
+
+
+
+ 
+    </script>
